@@ -1,21 +1,25 @@
-
 {
   "name": "react-native-scan-gun",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "react-native"
+    "react-native",
+    "Scan",
+    "Gun",
+    "Scan-Gun",
+    "react-native-scan-gun",
+    "react-native-ScanGun"
   ],
   "repository": {
-      "type": "git",
-      "url": "git+https://github.com/Marcello168/react-native-scan-gun"
+    "type": "git",
+    "url": "git+https://github.com/Marcello168/react-native-scan-gun"
   },
   "bugs": {
-      "url": "https://github.com/Marcello168/react-native-scan-gun/issues"
+    "url": "https://github.com/Marcello168/react-native-scan-gun/issues"
   },
   "homepage": "https://github.com/Marcello168/react-native-scan-gun#readme",
   "author": "",
@@ -23,6 +27,5 @@
   "peerDependencies": {
     "react-native": "^0.41.2",
     "react-native-windows": "0.41.0-rc.1"
-
   }
 }
