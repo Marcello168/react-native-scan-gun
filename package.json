@@ -1,7 +1,7 @@
 
 {
   "name": "react-native-scan-gun",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,6 +10,14 @@
   "keywords": [
     "react-native"
   ],
+  "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Marcello168/react-native-scan-gun"
+  },
+  "bugs": {
+      "url": "https://github.com/Marcello168/react-native-scan-gun/issues"
+  },
+  "homepage": "https://github.com/Marcello168/react-native-scan-gun#readme",
   "author": "",
   "license": "",
   "peerDependencies": {

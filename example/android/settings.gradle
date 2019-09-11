@@ -1,0 +1,5 @@
+rootProject.name = 'example'
+include ':react-native-scan-gun'
+project(':react-native-scan-gun').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-scan-gun/android')
+
+include ':app'
