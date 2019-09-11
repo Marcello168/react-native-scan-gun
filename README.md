@@ -2,7 +2,7 @@
  * @Author: gongyonghui
  * @Date: 2019-09-11 13:12:42
  * @LastEditors: gongyonghui
- * @LastEditTime: 2019-09-11 15:13:35
+ * @LastEditTime: 2019-09-11 15:19:16
  * @Description: file content
  -->
 
@@ -19,7 +19,7 @@
 ###  链接完原生库后 需要在`MainActivity`里面 增加 如下代码
 
 1. 导入 `import com.reactlibrary.ScanGunManager;`
-2. 重写`MainActivity`的`dispatchKeyEvent`方法 代码如下
+2. 重写`MainActivity`的`dispatchKeyEvent`方法 代码如下  具体可参考example的`MainActivity`文件
 
    ```java
        /*监听键盘事件,除了返回事件都将它拦截,使用我们自定义的拦截器处理该事件*/
@@ -65,11 +65,11 @@ import RNScanGun from 'react-native-scan-gun';
 RNScanGun;
 
 // 监听扫码回调
-    DeviceEventEmitter.addListener(RNScanGun.onScanCodeRecevieData, (code) => {
+DeviceEventEmitter.addListener(RNScanGun.onScanCodeRecevieData, (code) => {
       this.setState({ code: code })
 	})
 	
 	//手动清除上一次的二维码
-	RNScanGun.clearScanBarCodeText()
+RNScanGun.clearScanBarCodeText()
 ```
   
