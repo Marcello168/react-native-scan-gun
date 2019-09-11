@@ -1,23 +1,43 @@
+<!--
+ * @Author: gongyonghui
+ * @Date: 2019-09-11 13:12:42
+ * @LastEditors: gongyonghui
+ * @LastEditTime: 2019-09-11 15:13:35
+ * @Description: file content
+ -->
 
-# react-native-scan-gun
+# React native 扫码枪  react-native-scan-gun
 
-## Getting started
+## 开始使用
 
 `$ npm install react-native-scan-gun --save`
 
-### Mostly automatic installation
+### 自动链接原生库
 
 `$ react-native link react-native-scan-gun`
 
-### Manual installation
+###  链接完原生库后 需要在`MainActivity`里面 增加 如下代码
+
+1. 导入 `import com.reactlibrary.ScanGunManager;`
+2. 重写`MainActivity`的`dispatchKeyEvent`方法 代码如下
+
+   ```java
+       /*监听键盘事件,除了返回事件都将它拦截,使用我们自定义的拦截器处理该事件*/
+    @Override
+    public boolean dispatchKeyEvent(KeyEvent event) {
+        if (event.getKeyCode() != KeyEvent.KEYCODE_BACK) {
+            ScanGunManager.getInstance().analysisKeyEvent(event);
+            return true;
+        }
+        return super.dispatchKeyEvent(event);
+    }
+   ```
+   
+
+### 手动安装
 
 
-#### iOS
 
-1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
-2. Go to `node_modules` ➜ `react-native-scan-gun` and add `RNScanGun.xcodeproj`
-3. In XCode, in the project navigator, select your project. Add `libRNScanGun.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
-4. Run your project (`Cmd+R`)<
 
 #### Android
 
@@ -34,20 +54,22 @@
       compile project(':react-native-scan-gun')
   	```
 
-#### Windows
-[Read it! :D](https://github.com/ReactWindows/react-native)
-
-1. In Visual Studio add the `RNScanGun.sln` in `node_modules/react-native-scan-gun/windows/RNScanGun.sln` folder to their solution, reference from their app.
-2. Open up your `MainPage.cs` app
-  - Add `using Scan.Gun.RNScanGun;` to the usings at the top of the file
-  - Add `new RNScanGunPackage()` to the `List<IReactPackage>` returned by the `Packages` method
 
 
-## Usage
+
+## 使用方法
 ```javascript
 import RNScanGun from 'react-native-scan-gun';
 
 // TODO: What to do with the module?
 RNScanGun;
+
+// 监听扫码回调
+    DeviceEventEmitter.addListener(RNScanGun.onScanCodeRecevieData, (code) => {
+      this.setState({ code: code })
+	})
+	
+	//手动清除上一次的二维码
+	RNScanGun.clearScanBarCodeText()
 ```
   
