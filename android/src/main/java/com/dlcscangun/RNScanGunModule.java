@@ -1,5 +1,5 @@
 
-package com.reactlibrary;
+package com.dlcscangun;
 
 import android.util.Log;
 

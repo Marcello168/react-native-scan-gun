@@ -1,4 +1,4 @@
-package com.reactlibrary;
+package com.dlcscangun;
 
 public interface ScanCodeCallback {
     void onScanCode(String value);
